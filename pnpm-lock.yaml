@@ -29,7 +29,7 @@ importers:
   packages/project-b:
     dependencies:
       '@vspace/project-a':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../project-a
 
   play:
