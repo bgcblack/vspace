@@ -30,6 +30,9 @@ importers:
 
   play:
     dependencies:
+      '@vspace/components':
+        specifier: workspace:^
+        version: link:../packages/components
       ant-design-vue:
         specifier: 4.2.1
         version: 4.2.1(vue@3.4.29)
