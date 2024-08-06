@@ -16,5 +16,9 @@
     "typescript": "^5.5.3",
     "vitest": "^2.0.3",
     "vue": "^3.4.32"
+  },
+  "dependencies": {
+    "@vspace/components": "workspace:^",
+    "@vspace/utils": "workspace:^"
   }
 }

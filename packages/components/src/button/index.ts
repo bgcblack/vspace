@@ -1,18 +1,7 @@
 import _Button from './src/button.vue'
-import type { App, Plugin } from 'vue'
+import { withInstall } from '@vspace/utils'
 
-type SFCWithInstall<T> = T & Plugin
+export const VButton = withInstall(_Button)
+export default VButton
 
-const withInstall = <T>(comp: T) => {
-  const c = comp as SFCWithInstall<T>
-  c.install = (app: App) => {
-    const name = (comp as any).name
-    if (name) {
-      app.component(name, comp as any)
-    }
-  }
-  return c
-}
-
-export const Button = withInstall(_Button)
-export default Button
+export * from './src/button.vue'

@@ -1,11 +1,14 @@
-import * as components from './src/index'
-export * from './src/index'
-import { App } from 'vue'
+import Components from './components'
+import type { App, Plugin } from 'vue'
 
-export default {
-  install: (app: App) => {
-    for (let c in components) {
-      app.use(components[c as keyof typeof components])
-    }
-  },
+export const makeInstaller = (components: Plugin[] = []) => {
+  const install = (app: App, options?: any): any => {
+    components.forEach((c) => app.use(c))
+  }
+
+  return {
+    install,
+  }
 }
+
+export default makeInstaller(Components)
