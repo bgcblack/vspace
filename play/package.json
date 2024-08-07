@@ -17,6 +17,6 @@
   "dependencies": {
     "@vspace/components": "workspace:^",
     "ant-design-vue": "4.2.1",
-    "vue": "3.4.29"
+    "vue": "3.4.35"
   }
 }
