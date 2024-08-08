@@ -1,10 +1,10 @@
 <template>
-  <i></i>
+  <i data-url="https://www.baidu.com"></i>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'VIcon',
+  name: 'v-icon',
   setup() {
     return {}
   },
