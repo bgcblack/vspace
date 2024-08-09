@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "lint": "eslint --ignore-pattern .gitignore --fix src",
+    "format": "prettier .  --write"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +23,9 @@
     "lint-staged": "^15.2.8",
     "typescript": "^5.5.3",
     "vitest": "^2.0.3",
-    "vue": "^3.4.35"
+    "vue": "^3.4.35",
+    "@antfu/eslint-config": "^2.25.0",
+    "eslint": "9.5.0"
   },
   "dependencies": {
     "@vspace/components": "workspace:^",
