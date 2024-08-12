@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
+import vspace from '@vspace/components'
 import App from './app.vue'
-import { default as vspace } from '@vspace/components'
 
 const app = createApp(App)
 app.use(vspace as any, {})

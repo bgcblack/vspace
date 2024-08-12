@@ -22,13 +22,14 @@ export default antfu(
     jsonc: false,
     yaml: false,
 
-    // `.eslintignore` is no longer supported in Flat config, use `ignores` instead
+    // `.eslintignore` is no longer supported in Flat config, use `ignores` instead 在Flat配置中不再支持"-eslintignore"，请使用ignore '代替
     ignores: [
       '**/fixtures',
       // ...globs
-    ]
+    ],
   },
   // From the second arguments they are ESLint Flat Configs
+
   // you can have multiple configs
   {
     files: ['**/*.ts'],
