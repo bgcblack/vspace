@@ -2,39 +2,36 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
-    // Type of the project. 'lib' for libraries, the default is 'app'
-    type: 'lib',
+    type: 'app', // 项目类型为 'app'，适用于应用程序项目 可选lib
 
-    // Enable stylistic formatting rules
-    // stylistic: true,
-
-    // Or customize the stylistic rules
     stylistic: {
-      indent: 2, // 4, or 'tab'
-      quotes: 'single', // or 'double'
+      indent: 2, // 缩进风格
+      quotes: 'single', // 单引号
     },
 
-    // TypeScript and Vue are autodetected, you can also explicitly enable them:
     typescript: true,
-    vue: true,
-
-    // Disable jsonc and yaml support
+    vue: {
+      overrides: {
+        // enforce order of component top-level elements 自定义 Vue 文件中标签的顺序，模板 -> 脚本 -> 样式
+        'vue/block-order': ['error', {
+          order: ['template', 'script', 'style'],
+        }],
+      },
+    },
     jsonc: false,
     yaml: false,
-
-    // `.eslintignore` is no longer supported in Flat config, use `ignores` instead 在Flat配置中不再支持"-eslintignore"，请使用ignore '代替
     ignores: [
-      '**/fixtures',
-      // ...globs
+      '**/fixtures', // 忽略特定路径下的文件（如 fixtures 目录）
     ],
   },
-  // From the second arguments they are ESLint Flat Configs
 
-  // you can have multiple configs
+  // 第二部分，应用于所有 TypeScript 文件的规则配置
   {
-    files: ['**/*.ts'],
+    files: ['**/*.ts'], // 仅匹配 TypeScript 文件
     rules: {},
   },
+
+  // 第三部分，额外的规则配置
   {
     rules: {},
   },
